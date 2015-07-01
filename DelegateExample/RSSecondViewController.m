@@ -19,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.tableView.estimatedRowHeight = 64;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 
@@ -33,7 +36,11 @@
     
     // Actions, actions, and more actions!
     
-    NSLog(@"Button from cell #%d clicked! :) %s", indexPath.row, __PRETTY_FUNCTION__);
+    NSNumber *n = [NSNumber numberWithUnsignedInteger:indexPath.row + 1];
+    
+    NSLog(@"Button from cell #%d clicked! :) %s", [n intValue], __PRETTY_FUNCTION__);
+    
+    [self alertWithTitle:@"Button Clicked!" andMessage:[NSString stringWithFormat:@"You clicked on the button from the row #%d", [n intValue]]];
 }
 
 
@@ -56,19 +63,35 @@
     
     cell.delegate = self;
     
-    cell.title.text = [NSString stringWithFormat:@"Title #%d", indexPath.row];
-    cell.subtitle.text = [NSString stringWithFormat:@"Subtitle #%d", indexPath.row];
+    NSNumber *n = [NSNumber numberWithUnsignedInteger:indexPath.row + 1];
+    
+    cell.title.text = [NSString stringWithFormat:@"Title #%d", [n intValue]];
+    cell.title.numberOfLines = 0;
+    
+    if (indexPath.row % 2) {
+        cell.subtitle.text = [NSString stringWithFormat:@"Subtitle... \n\nwith different height :)"];
+    } else {
+        cell.subtitle.text = [NSString stringWithFormat:@"Subtitle"];
+    }
+    
+    cell.title.numberOfLines = 0;
+    
+//    NSLog(@"%f", [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);
     
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 45;
-}
 
+#pragma mark - Alert
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 45;
+- (void)alertWithTitle:(NSString *)title andMessage:(NSString *)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:@"OK", nil];
+    
+    [alert show];
 }
 
 @end

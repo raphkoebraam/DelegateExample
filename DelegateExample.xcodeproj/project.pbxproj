@@ -132,10 +132,10 @@
 		C9903EB81A001B1700FFB5EC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C9903EC01A002B0B00FFB5EC /* FirstViewController */,
-				C9903EC11A002B2100FFB5EC /* SecondViewController */,
-				C9903EBC1A002A8800FFB5EC /* BaseViewControllerWithDelegate */,
-				C9903EBB1A002A7E00FFB5EC /* BaseViewController */,
+				C9903EBB1A002A7E00FFB5EC /* BaseView */,
+				C9903EBC1A002A8800FFB5EC /* BaseViewWithDelegate */,
+				C9903EC01A002B0B00FFB5EC /* FirstView */,
+				C9903EC11A002B2100FFB5EC /* SecondView */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -150,40 +150,40 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		C9903EBB1A002A7E00FFB5EC /* BaseViewController */ = {
+		C9903EBB1A002A7E00FFB5EC /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
 				C9903E991A001AFF00FFB5EC /* RSBaseViewController.h */,
 				C9903E9A1A001AFF00FFB5EC /* RSBaseViewController.m */,
 			);
-			name = BaseViewController;
+			name = BaseView;
 			sourceTree = "<group>";
 		};
-		C9903EBC1A002A8800FFB5EC /* BaseViewControllerWithDelegate */ = {
+		C9903EBC1A002A8800FFB5EC /* BaseViewWithDelegate */ = {
 			isa = PBXGroup;
 			children = (
 				C9903EBD1A002AD100FFB5EC /* RSBaseViewControllerWithDelegate.h */,
 				C9903EBE1A002AD100FFB5EC /* RSBaseViewControllerWithDelegate.m */,
 			);
-			name = BaseViewControllerWithDelegate;
+			name = BaseViewWithDelegate;
 			sourceTree = "<group>";
 		};
-		C9903EC01A002B0B00FFB5EC /* FirstViewController */ = {
+		C9903EC01A002B0B00FFB5EC /* FirstView */ = {
 			isa = PBXGroup;
 			children = (
 				C9903EC31A002BE100FFB5EC /* RSFirstViewController.h */,
 				C9903EC41A002BE100FFB5EC /* RSFirstViewController.m */,
 			);
-			name = FirstViewController;
+			name = FirstView;
 			sourceTree = "<group>";
 		};
-		C9903EC11A002B2100FFB5EC /* SecondViewController */ = {
+		C9903EC11A002B2100FFB5EC /* SecondView */ = {
 			isa = PBXGroup;
 			children = (
 				C9903EC61A002BF500FFB5EC /* RSSecondViewController.h */,
 				C9903EC71A002BF500FFB5EC /* RSSecondViewController.m */,
 			);
-			name = SecondViewController;
+			name = SecondView;
 			sourceTree = "<group>";
 		};
 		C9903ECC1A002D7800FFB5EC /* Style */ = {
@@ -442,6 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DelegateExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -452,6 +453,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DelegateExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
